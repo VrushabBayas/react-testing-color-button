@@ -16,15 +16,19 @@ function App() {
         <button
           disabled={disabled}
           onClick={handleOnclick}
-          style={{ backgroundColor: buttonColor }}
+          style={{ backgroundColor: disabled ? "gray" : buttonColor }}
         >{`Change to ${buttonText}`}</button>
       </div>
-      <input
-        type="checkbox"
-        defaultChecked={disabled}
-        aria-checked={disabled}
-        onChange={handleOnCheck}
-      />
+      <div className="checboxWrapper">
+        <input
+          id="disable-button-checkbox"
+          type="checkbox"
+          defaultChecked={disabled}
+          aria-checked={disabled}
+          onChange={handleOnCheck}
+        />
+        <label htmlFor="disable-button-checkbox">Disable button</label>
+      </div>
     </div>
   );
 }
